@@ -1,32 +1,21 @@
+import java.util.List;
 import java.util.Scanner;
 
-public abstract class Haslo {
-    Scanner scanner = new Scanner(System.in);
+public class Haslo   {
+    List<String>  hasla;
 
-    public final int dlugosc;
-    public final String wartosc;
-
-    protected Haslo(int dlugosc, String wartosc){
-        this.dlugosc=dlugosc;
-        this.wartosc=wartosc; }
-
-
-        public void zgaduj(){
-            System.out.println("odgadnij haslo " + toString());
-            String input = scanner.next();
-            if(input.equals(wartosc)){
-                System.out.println("correct!");}
-                else{
-                    System.out.println("wrong!");
-            }
-
-        }
-    @Override
-    public String toString() {
-        return "{" +
-                "dlugosc=" + dlugosc +
-                ", wartosc='" + wartosc + '\'' +
-                '}';
+    public Haslo(List<String> hasla) {
+this.hasla=hasla;
     }
 
+    @Override
+    public String toString() {
+        return "Haslo{" +
+                "hasla=" + hasla +
+                '}';
+    }
 }
+
+
+
+

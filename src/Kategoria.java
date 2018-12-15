@@ -1,17 +1,10 @@
-public class Kategoria extends Haslo {
+public class Kategoria {
     String nazwaKategorii;
 
-    protected Kategoria(int dlugosc, String wartosc, String nazwaKategorii) {
-        super(dlugosc, wartosc);
+    public Kategoria(String nazwaKategorii) {
+
         this.nazwaKategorii = nazwaKategorii;
     }
 
-    @Override
-    public String toString() {
-        return "Kategoria{" +
-                "nazwaKategorii='" + nazwaKategorii + '\'' +
-                ", dlugosc=" + dlugosc +
-                ", wartosc='" + wartosc + '\'' +
-                '}';
-    }
 }
+

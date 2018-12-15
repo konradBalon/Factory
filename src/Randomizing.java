@@ -5,20 +5,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Randomizing {
+public class Randomizing  {
     final String filePath = "FourLetterWords.txt";
-    int dlugosc;
+
     String word;
-    List<String> list = new ArrayList<>();
+    List<String> listaHasel = new ArrayList<>();
 
 
-    protected Randomizing(int dlugosc, String word){
-        this.dlugosc=dlugosc;
-        this.word=word;
-    }
-
-
-    public void reader() {
+    public Haslo reader() {
 
         BufferedReader fileReader = null;
         try {
@@ -32,20 +26,19 @@ public class Randomizing {
         while (word != null) {
             try {
                 word = fileReader.readLine();
-                list.add(word);
+                listaHasel.add(word);
             } catch (IOException e) {
-                e.printStackTrace(); } }
+                e.printStackTrace();
+            }
+        }
         try {
             fileReader.close();
         } catch (IOException e) {
-            System.out.println("Can't close the file!!"); }
-        System.out.println(list); }
+            System.out.println("Can't close the file!!");
+        }
 
-    @Override
-    public String toString() {
-        return "Randomizing{" +
-                "dlugosc=" + dlugosc +
-                ", word='" + word + '\'' +
-                '}';
+        return new Haslo(this.listaHasel);
     }
+
+
 }
